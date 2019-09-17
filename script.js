@@ -71,27 +71,24 @@ function prepareObjects(jsonData) {
     // Create new object with cleaned data
     const student = Object.create(Student);
 
-    const texts = jsonObject.fullname.trim().split(" ");
+    const fullName = jsonObject.fullname.trim().split(" ");
+    console.log(fullName);
     const house = jsonObject.house.trim();
 
     student.gender = jsonObject.gender;
+
     student.house = house.charAt(0).toUpperCase() + house.slice(1).toLowerCase();
-    student.firstName = texts[0].charAt(0).toUpperCase() + texts[0].slice(1).toLowerCase();
 
-    student.middleName = texts[1];
-    student.lastName = texts[2];
+    student.firstName = fullName[0].charAt(0).toUpperCase() + fullName[0].slice(1).toLowerCase();
 
-    // if (texts[1] == undefined) {
-    //   return false;
-    // } else {
-    //   student.middleName = texts[1].charAt(0).toUpperCase() + texts[1].slice(1).toLowerCase();
-    // }
-
-    // if (texts[2] == undefined) {
-    //   return false;
-    // } else {
-    //   student.lastName = texts[2].charAt(0).toUpperCase() + texts[2].slice(1).toLowerCase();
-    // }
+    if (fullName.length === 2) {
+      console.log("studerende har intet mellemnavn");
+      student.lastName = fullName[1].charAt(0).toUpperCase() + fullName[1].slice(1).toLowerCase();
+    } else if (fullName.length === 3) {
+      console.log("studerende har et mellemnavn");
+      student.middleName = fullName[1].charAt(0).toUpperCase() + fullName[1].slice(1).toLowerCase();
+      student.lastName = fullName[2].charAt(0).toUpperCase() + fullName[2].slice(1).toLowerCase();
+    }
 
     student.id = uuidv4();
 
@@ -117,6 +114,10 @@ function rebuildList() {
 
 function setSort() {
   sortButton = this.getAttribute("data-sort");
+  document.querySelectorAll(".sort").forEach(elm => {
+    elm.classList.remove("valgt");
+  });
+  this.classList.add("valgt");
   sortCurrentStudents(sortButton);
 }
 
@@ -235,27 +236,13 @@ function displayStudent(student) {
       document.querySelector("#popup").style.backgroundColor = Slytherin;
     }
   }
-
-  //   document.querySelectorAll(".filter").forEach(elm => {
-  //     elm.addEventListener("click", clickFilter);
-  //   });
 }
-
-// function clickFilter(student) {
-//   filter = this.getAttribute("data-hus");
-//   document.querySelector(".students").textContent = " ";
-//   document.querySelectorAll(".filter").forEach(elm => {
-//     elm.classList.remove("valgt");
-//   });
-//   this.classList.add("valgt");
-//   displayStudent(student);
-// }
 
 // Our prototype Student
 const Student = {
   firstName: "-firstName-",
-  middleName: "-middleName-",
-  lastName: "-lastName-",
+  middleName: "",
+  lastName: "",
   gender: "-gender-",
   house: "-house-",
   id: "-id"

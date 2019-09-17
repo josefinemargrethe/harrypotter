@@ -30,7 +30,7 @@ p {
 }
 
 body {
-  background-color: #fffff6;
+  background-color: #002e5c;
 }
 
 .students {
@@ -55,9 +55,11 @@ body {
 
 .filter,
 .sort,
-.expelledstudents {
-  background-color: silver;
-  border: none;
+.expelledstudents,
+.popupBtn,
+.expelledBtn {
+  background-color: #002e5c;
+  border: 1px solid silver;
   color: white;
   padding: 7px 7px;
   text-align: center;
@@ -70,13 +72,15 @@ body {
 
 .filter:hover,
 .sort:hover,
-.expelledstudents:hover {
-  color: grey;
+.expelledstudents:hover,
+.popupBtn:hover,
+.expelledBtn:hover {
+  color: #0066d3;
 }
 
 .valgt {
-  background-color: white;
-  color: silver;
+  background-color: rgb(104, 104, 104);
+  color: white;
   border: 1px solid silver;
   transition: 0.5 ease-in-out;
 }
