@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "harry_pregular";
+  src: url("harryp__-webfont.woff2") format("woff2"), url("harryp__-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#gridcontainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+#all_buttons {
+  margin: 0;
+  border-right: 1px silver solid;
+}
+
+h3,
+h2 {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: silver;
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  font-weight: 200;
+  color: rgb(148, 148, 148);
+}
+
+body {
+  background-color: #fffff6;
+}
+
+.students {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  padding: 1vw;
+  grid-gap: 2vw;
+}
+
+.student {
+  border-bottom: 1px solid silver;
+  border-right: 1px solid silver;
+  cursor: pointer;
+}
+
+/* .navigationwrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5vw;
+  } */
+
+.filter,
+.sort,
+.expelledstudents {
+  background-color: silver;
+  border: none;
+  color: white;
+  padding: 7px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 1vh;
+}
+
+.filter:hover,
+.sort:hover,
+.expelledstudents:hover {
+  color: grey;
+}
+
+.valgt {
+  background-color: white;
+  color: silver;
+  border: 1px solid silver;
+  transition: 0.5 ease-in-out;
+}
+#text {
+  color: #e4e4cb;
+}
+
+#popup {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  /* background-color: rgba(140, 118, 168, 0.36); */
+  overflow: scroll;
+  display: none;
+  margin: 0;
+}
+
+#indhold {
+  min-height: 50vh;
+  /* background-color: white; */
+  width: 75vw;
+  margin: 4rem auto;
+}
+
+#luk {
+  position: fixed;
+  right: 2rem;
+  top: 0.5rem;
+}
+
+#luk button {
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  color: white;
+  cursor: pointer;
+}

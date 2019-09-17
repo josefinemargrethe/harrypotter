@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harry Potter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="popup">
+      <div id="luk">
+        <button>✕</button>
+      </div>
+      <div id="indhold"></div>
+    </div>
+
+    <div id="gridcontainer">
+      <nav id="all_buttons">
+        <div class="navigationwrapper">
+          <div class="sortingnav">
+            <h2>Sort by</h2>
+            <button class="sort" data-sort="first_name">First name</button>
+            <button class="sort" data-sort="last_name">Last name</button>
+            <button class="sort" data-sort="house">House</button>
+          </div>
+          <div class="filternav">
+            <h2 class="filterh">Filter by</h2>
+            <button class="filter" data-hus="Gryffindor">Gryffindor</button>
+            <button class="filter" data-hus="Ravenclaw">Ravenclaw</button>
+            <button class="filter" data-hus="Slytherin">Slytherin</button>
+            <button class="filter" data-hus="Hufflepuff">Hufflepuff</button>
+            <button class="filter valgt" data-hus="alle">Hogwartz</button>
+            <div class="expellednav">
+              <h2>Expelled students</h2>
+              <button class="expelledstudents" data-expelled="expelled">Show expelled students</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <section id="all">
+          <div class="students"></div>
+          <template class="all_students">
+            <section class="student">
+              <h3 class="studentname"></h3>
+              <p class="house"></p>
+              <button class="expelled_icon" data-action="remove">EXPELLL</button>
+              <button class="popupBtn">Read more</button>
+            </section>
+          </template>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
